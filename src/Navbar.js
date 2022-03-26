@@ -6,30 +6,43 @@ import { FontAwesome5 } from '@expo/vector-icons';
 function Navbar() {
   return(
       <View style={styles.header}>
-      <ImageBackground source={require('../images/pear-bg.jpg')} style={styles.background}>
-        <TouchableOpacity style={styles.buttonOverlay}>
-          <FontAwesome5 name='bars' style={styles.button} />  
-        </TouchableOpacity>
-        <View style={styles.titleWrapper}>
-          <Text style={styles.titleYear}>SPRING 1961</Text>
-          <Text style={styles.title}>ANDRÉ</Text>
+        <ImageBackground source={require('../images/pear-bg.jpg')} style={styles.background}>
+          <TouchableOpacity style={styles.buttonOverlay}>
+            <FontAwesome5 name='bars' style={styles.button} />  
+          </TouchableOpacity>
+          <View style={styles.titleWrapper}>
+            <Text style={styles.titleYear}>SPRING 1961</Text>
+            <Text style={styles.title}>ANDRÉ</Text>
+          </View>
+        </ImageBackground>
+        <View style={styles.winesLine}>
+          <Image source={require('../images/ellipse.jpg')} style={styles.winesBackground}></Image>
+          <View style={styles.wineWrapper}>
+            <Image source={require('../images/LaMarca.png')} style={[styles.wine, styles.wineLeft]}></Image>
+            <Text style={styles.wineSubtitle}>LA MARCA</Text>
+          </View>
+          <View style={styles.wineWrapper}>
+            <Image source={require('../images/Andre.png')} style={[styles.wine, styles.selected]}></Image>
+            <Text style={styles.wineSubtitle}>ANDRÉ</Text>
+          </View>
+          <View style={styles.wineWrapper}>
+            <Image source={require('../images/Apothic.png')} style={[styles.wine, styles.wineRight]}></Image>
+            <Text style={styles.wineSubtitle}>APOTHIC</Text>
+          </View>  
         </View>
-      </ImageBackground>
-      <View style={styles.winesLine}>
-        <Image source={require('../images/ellipse.jpg')} style={styles.winesBackground}></Image>
-        <View style={styles.wineWrapper}>
-          <Image source={require('../images/LaMarca.png')} style={[styles.wine, styles.wineLeft]}></Image>
-          <Text style={styles.wineSubtitle}>LA MARCA</Text>
+        <View style={styles.wineBottomBlock}>
+          <View style={styles.wineInfo}>
+            <View style={styles.wineInfoLeft}>
+              <Text style={styles.wineInfoTitle}>Origin of wine</Text>
+              <Text style={styles.wineInfoContent}>Coorg, IN</Text>
+            </View>
+            <View style={styles.wineInfoRight}>
+              <Text style={styles.wineInfoTitle}>Tastes like...</Text>
+              <Text style={styles.wineInfoContent}>Citrus, Fresh, Pear</Text>
+            </View>
+          </View>
+          <Text style={styles.wineDescription}>A light-bodied classic with a crisp, bright finish, Barefoot Pinot Grigio offers all the flavors of tart green apples with fresh, white peaches. Accented with floral blossoms and citrus aromas, our Pinot Grigio pairs perfectly with traditional favorites like poultry, pasta, and pizza.</Text>
         </View>
-        <View style={styles.wineWrapper}>
-          <Image source={require('../images/Andre.png')} style={[styles.wine, styles.selected]}></Image>
-          <Text style={styles.wineSubtitle}>ANDRÉ</Text>
-        </View>
-        <View style={styles.wineWrapper}>
-          <Image source={require('../images/Apothic.png')} style={[styles.wine, styles.wineRight]}></Image>
-          <Text style={styles.wineSubtitle}>APOTHIC</Text>
-        </View>  
-      </View>
       </View>
   );
 }
@@ -95,7 +108,7 @@ const styles = StyleSheet.create({
   winesLine: {
     position: 'absolute',
     top: 0,
-    bottom: 0,
+    bottom: 50,
     left: 0,
     right: 0,
     flex: 1,
@@ -114,10 +127,11 @@ const styles = StyleSheet.create({
     resizeMode: 'stretch',
   },
   wineLeft: {
+    marginLeft: 15,
     transform: [{ rotate: '-9deg' }],
   },
   wineRight: {
-    marginLeft: 15,
+    marginLeft: 25,
     transform: [{ rotate: '9deg' }],
   },
   selected: {
@@ -135,6 +149,42 @@ const styles = StyleSheet.create({
     lineHeight: 23,
     fontWeight: '300',
     fontFamily: 'Roboto',
+    marginTop: 10,
+  },
+  wineInfo: {
+    flexDirection: "row",
+    marginBottom: 20,
+  },
+  wineInfoLeft: {
+    flex: .3,
+  },
+  wineInfoRight: {
+    flex: .4,
+  },
+  wineInfoTitle: {
+    color: '#1A1A1A',
+    fontSize: 13,
+    lineHeight: 15,
+    fontWeight: '300',
+    fontFamily: 'Roboto',
+  },
+  wineInfoContent: {
+    color: '#1A1A1A',
+    fontSize: 16,
+    lineHeight: 19,
+    fontWeight: '700',
+    fontFamily: 'Roboto',
+  },
+  wineDescription: {
+    color: '#1A1A1A',
+    fontSize: 16,
+    lineHeight: 19,
+    fontWeight: '300',
+    fontFamily: 'Roboto',
+  },
+  wineBottomBlock: {
+    paddingHorizontal: 20,
+    marginBottom: 20,
   },
 });
 

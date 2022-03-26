@@ -7,7 +7,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Navbar/>
-      <StatusBar hidden={true}/>
+      <StatusBar translucent={true}/>
       {/* <Text style={styles.title}>
         A FAMILY TRADITION
       </Text>
