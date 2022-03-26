@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, ImageBackground, Image } from 'react-native';
 import { TouchableOpacity } from "react-native";
 import { FontAwesome5 } from '@expo/vector-icons';
 
-function Navbar() {
+function Screen() {
   return(
       <View style={styles.header}>
         <ImageBackground source={require('../images/pear-bg.jpg')} style={styles.background}>
@@ -188,4 +188,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Navbar;
+export default Screen;
