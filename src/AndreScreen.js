@@ -3,7 +3,8 @@ import { StyleSheet, View, Text, ImageBackground, Image } from 'react-native';
 import { TouchableOpacity } from "react-native";
 import { FontAwesome5 } from '@expo/vector-icons';
 
-function Screen() {
+function AndreScreen() {
+
   return(
       <View style={styles.header}>
         <ImageBackground source={require('../images/pear-bg.jpg')} style={styles.background}>
@@ -16,7 +17,7 @@ function Screen() {
           </View>
         </ImageBackground>
         <View style={styles.winesLine}>
-          <Image source={require('../images/ellipse.jpg')} style={styles.winesBackground}></Image>
+          <View style={styles.winesBackground}></View>
           <View style={styles.wineWrapper}>
             <Image source={require('../images/LaMarca.png')} style={[styles.wine, styles.wineLeft]}></Image>
             <Text style={styles.wineSubtitle}>LA MARCA</Text>
@@ -50,29 +51,26 @@ function Screen() {
 const styles = StyleSheet.create({
   header: {
     flex: 1,
-    // flexDirection: 'row',
-    // justifyContent: 'flex-start',
-    // alignItems: 'flex-start',
   },
   background: {
     flex: 1,
-    height: 340,
-    resizeMode: 'cover',
+    height: 350,
+    resizeMode: 'stretch',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
   },
   winesBackground: {
     position: 'absolute',
+    justifyContent: 'center',
     top: 340,
-    bottom: 0,
-    left: 80,
-    right: 0,
-    flex: 1,
     width: 240,
     height: 240,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#D04D3D',
+    borderRadius: 120,
+    zIndex: -1,
+    elevation: -1,
+    opacity: .2,
   },
   buttonOverlay: {
     justifyContent: 'flex-start',
@@ -188,4 +186,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Screen;
+export default AndreScreen;
