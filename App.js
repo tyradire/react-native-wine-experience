@@ -4,13 +4,15 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 import AndreScreen from './src/AndreScreen';
 import ApothicScreen from './src/ApothicScreen';
+import LaMarcaScreen from './src/LaMarcaScreen';
 
 export default function App() {
   return (
     
     <View style={styles.container}>
+      <LaMarcaScreen />
       {/* <AndreScreen/> */}
-      <ApothicScreen/>
+      {/* <ApothicScreen/> */}
       <StatusBar translucent={true}/>
       {/* <Text style={styles.title}>
         A FAMILY TRADITION

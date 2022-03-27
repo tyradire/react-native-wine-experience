@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   titleYear: {
     color: '#FFFFFF',
-    textAlign: 'center',
+    textAlign: 'left',
     fontSize: 20,
     lineHeight: 23,
     fontWeight: '300',
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   title: {
     marginTop: 3,
     color: '#FFFFFF',
-    textAlign: 'center',
+    textAlign: 'left',
     fontSize: 50,
     lineHeight: 59,
     fontWeight: '300',
