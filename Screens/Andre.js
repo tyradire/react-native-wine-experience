@@ -1,48 +1,42 @@
 import React from "react";
-import { StyleSheet, View, Text, ImageBackground, Image } from 'react-native';
-import { TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-function ApothicScreen() {
+import Header from "../Components/Header";
+import background from '../images/pear-bg.jpg';
+
+function Andre({ navigation }) {
 
   return(
       <View style={styles.header}>
-        <ImageBackground source={require('../images/apple-bg.jpg')} style={styles.background}>
-          <TouchableOpacity style={styles.buttonOverlay}>
-            <FontAwesome5 name='bars' style={styles.button} />  
-          </TouchableOpacity>
-          <View style={styles.titleWrapper}>
-            <Text style={styles.titleYear}>WINTER 1984</Text>
-            <Text style={styles.title}>APOTHIC</Text>
-          </View>
-        </ImageBackground>
+        <Header navigation={navigation} year='SPRING 1961' title='ANDRÉ' background={background} />
         <View style={styles.winesLine}>
           <View style={styles.winesBackground}></View>
           <View style={styles.wineWrapper}>
-            <Image source={require('../images/Andre.png')} style={[styles.wine, styles.wineLeft]}></Image>
+            <Image source={require('../images/LaMarca.png')} style={[styles.wine, styles.wineLeft]}></Image>
+            <Text style={styles.wineSubtitle}>LA MARCA</Text>
+          </View>
+          <View style={styles.wineWrapper}>
+            <Image source={require('../images/Andre.png')} style={[styles.wine, styles.selected]}></Image>
             <Text style={styles.wineSubtitle}>ANDRÉ</Text>
           </View>
           <View style={styles.wineWrapper}>
-            <Image source={require('../images/Apothic.png')} style={[styles.wine, styles.selected]}></Image>
+            <Image source={require('../images/Apothic.png')} style={[styles.wine, styles.wineRight]}></Image>
             <Text style={styles.wineSubtitle}>APOTHIC</Text>
-          </View>
-          <View style={styles.wineWrapper}>
-            <Image source={require('../images/LaMarca.png')} style={[styles.wine, styles.wineRight]}></Image>
-            <Text style={styles.wineSubtitle}>LA MARCA</Text>
           </View>  
         </View>
         <View style={styles.wineBottomBlock}>
           <View style={styles.wineInfo}>
             <View style={styles.wineInfoLeft}>
               <Text style={styles.wineInfoTitle}>Origin of wine</Text>
-              <Text style={styles.wineInfoContent}>California, USA</Text>
+              <Text style={styles.wineInfoContent}>Coorg, IN</Text>
             </View>
             <View style={styles.wineInfoRight}>
               <Text style={styles.wineInfoTitle}>Tastes like...</Text>
-              <Text style={styles.wineInfoContent}>Aromatic, Crisp, Apple</Text>
+              <Text style={styles.wineInfoContent}>Citrus, Fresh, Pear</Text>
             </View>
           </View>
-          <Text style={styles.wineDescription}>Packed with the full flavors of juicy cherries, tart raspberries, and sweet pomegranates, Barefoot Pink Moscato offers all the flavors and aromas of traditional Moscato with layers of vibrant red fruit. Finished with hints of jasmine and Mandarin oranges, our sweet Pink Moscato pairs perfectly with spicy appetizers and fresh strawberries.</Text>
+          <Text style={styles.wineDescription}>A light-bodied classic with a crisp, bright finish, Barefoot Pinot Grigio offers all the flavors of tart green apples with fresh, white peaches. Accented with floral blossoms and citrus aromas, our Pinot Grigio pairs perfectly with traditional favorites like poultry, pasta, and pizza.</Text>
         </View>
       </View>
   );
@@ -51,6 +45,7 @@ function ApothicScreen() {
 const styles = StyleSheet.create({
   header: {
     flex: 1,
+    backgroundColor: '#fff',
   },
   background: {
     flex: 1,
@@ -66,11 +61,11 @@ const styles = StyleSheet.create({
     top: 340,
     width: 240,
     height: 240,
-    backgroundColor: '#E9E5A5',
+    backgroundColor: '#D04D3D',
     borderRadius: 120,
-    zIndex: -1,
-    elevation: -1,
-    opacity: .3,
+    zIndex: 1,
+    elevation: 1,
+    opacity: .1,
   },
   buttonOverlay: {
     justifyContent: 'flex-start',
@@ -87,7 +82,7 @@ const styles = StyleSheet.create({
     marginLeft: 49,
   },
   titleYear: {
-    color: '#FFFFFF',
+    color: '#8A140D',
     textAlign: 'left',
     fontSize: 20,
     lineHeight: 23,
@@ -96,7 +91,7 @@ const styles = StyleSheet.create({
   },
   title: {
     marginTop: 3,
-    color: '#FFFFFF',
+    color: '#8A140D',
     textAlign: 'left',
     fontSize: 50,
     lineHeight: 59,
@@ -154,10 +149,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   wineInfoLeft: {
-    flex: .4,
+    flex: .3,
   },
   wineInfoRight: {
-    flex: .5,
+    flex: .4,
   },
   wineInfoTitle: {
     color: '#1A1A1A',
@@ -186,4 +181,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ApothicScreen;
+export default Andre;

@@ -3,46 +3,41 @@ import { StyleSheet, View, Text, ImageBackground, Image } from 'react-native';
 import { TouchableOpacity } from "react-native";
 import { FontAwesome5 } from '@expo/vector-icons';
 
-function LaMarcaScreen() {
+import Header from "../Components/Header";
+import background from '../images/apple-bg.jpg';
+
+function Apothic({ navigation }) {
 
   return(
       <View style={styles.header}>
-        <ImageBackground source={require('../images/grape-bg.jpg')} style={styles.background}>
-          <TouchableOpacity style={styles.buttonOverlay}>
-            <FontAwesome5 name='bars' style={styles.button} />  
-          </TouchableOpacity>
-          <View style={styles.titleWrapper}>
-            <Text style={styles.titleYear}>WINTER 1980</Text>
-            <Text style={styles.title}>LA MARCA</Text>
-          </View>
-        </ImageBackground>
+        <Header navigation={navigation} year='WINTER 1984' title='APOTHIC' background={background} />
         <View style={styles.winesLine}>
           <View style={styles.winesBackground}></View>
           <View style={styles.wineWrapper}>
-            <Image source={require('../images/Apothic.png')} style={[styles.wine, styles.wineLeft]}></Image>
+            <Image source={require('../images/Andre.png')} style={[styles.wine, styles.wineLeft]}></Image>
+            <Text style={styles.wineSubtitle}>ANDRÉ</Text>
+          </View>
+          <View style={styles.wineWrapper}>
+            <Image source={require('../images/Apothic.png')} style={[styles.wine, styles.selected]}></Image>
             <Text style={styles.wineSubtitle}>APOTHIC</Text>
           </View>
           <View style={styles.wineWrapper}>
-            <Image source={require('../images/LaMarca.png')} style={[styles.wine, styles.selected]}></Image>
+            <Image source={require('../images/LaMarca.png')} style={[styles.wine, styles.wineRight]}></Image>
             <Text style={styles.wineSubtitle}>LA MARCA</Text>
-          </View>
-          <View style={styles.wineWrapper}>
-            <Image source={require('../images/Andre.png')} style={[styles.wine, styles.wineRight]}></Image>
-            <Text style={styles.wineSubtitle}>ANDRÉ</Text>
           </View>  
         </View>
         <View style={styles.wineBottomBlock}>
           <View style={styles.wineInfo}>
             <View style={styles.wineInfoLeft}>
               <Text style={styles.wineInfoTitle}>Origin of wine</Text>
-              <Text style={styles.wineInfoContent}>Stockholm, Sweden</Text>
+              <Text style={styles.wineInfoContent}>California, USA</Text>
             </View>
             <View style={styles.wineInfoRight}>
               <Text style={styles.wineInfoTitle}>Tastes like...</Text>
-              <Text style={styles.wineInfoContent}>Grape, Rich, Vanilla</Text>
+              <Text style={styles.wineInfoContent}>Aromatic, Crisp, Apple</Text>
             </View>
           </View>
-          <Text style={styles.wineDescription}>Packing big, bold flavor with a smooth finish, Barefoot Chardonnay brings tempting flavors to every bottle, with notes of crisp, green apples and sweet peaches. Accented with hints of honey and vanilla, our medium-bodied Chardonnay pairs perfectly with fresh fruit, pasta, chicken, and salmon.</Text>
+          <Text style={styles.wineDescription}>Packed with the full flavors of juicy cherries, tart raspberries, and sweet pomegranates, Barefoot Pink Moscato offers all the flavors and aromas of traditional Moscato with layers of vibrant red fruit. Finished with hints of jasmine and Mandarin oranges, our sweet Pink Moscato pairs perfectly with spicy appetizers and fresh strawberries.</Text>
         </View>
       </View>
   );
@@ -54,13 +49,11 @@ const styles = StyleSheet.create({
   },
   background: {
     flex: 1,
-    height: 450,
+    height: 350,
     resizeMode: 'stretch',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    zIndex: 0,
-    elevation: 0,
   },
   winesBackground: {
     position: 'absolute',
@@ -68,11 +61,11 @@ const styles = StyleSheet.create({
     top: 340,
     width: 240,
     height: 240,
-    backgroundColor: '#D04D3D',
+    backgroundColor: '#E9E5A5',
     borderRadius: 120,
     zIndex: -1,
     elevation: -1,
-    opacity: .1,
+    opacity: .3,
   },
   buttonOverlay: {
     justifyContent: 'flex-start',
@@ -135,8 +128,8 @@ const styles = StyleSheet.create({
     transform: [{ rotate: '9deg' }],
   },
   selected: {
-    width: 105,
-    height: 350,
+    width: 113,
+    height: 378,
     zIndex: 1,
     elevation: 1,
     transform: [{ rotate: '-4deg' }],
@@ -156,7 +149,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   wineInfoLeft: {
-    flex: .5,
+    flex: .4,
   },
   wineInfoRight: {
     flex: .5,
@@ -188,4 +181,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LaMarcaScreen;
+export default Apothic;
