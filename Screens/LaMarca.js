@@ -3,19 +3,14 @@ import { StyleSheet, View, Text, ImageBackground, Image } from 'react-native';
 import { TouchableOpacity } from "react-native";
 import { FontAwesome5 } from '@expo/vector-icons';
 
+import Header from "../Components/Header";
+import background from '../images/grape-bg.jpg';
+
 function LaMarca({ navigation }) {
 
   return(
       <View style={styles.header}>
-        <ImageBackground source={require('../images/grape-bg.jpg')} style={styles.background}>
-          <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.buttonOverlay}>
-            <FontAwesome5 name='bars' style={styles.button} />  
-          </TouchableOpacity>
-          <View style={styles.titleWrapper}>
-            <Text style={styles.titleYear}>WINTER 1980</Text>
-            <Text style={styles.title}>LA MARCA</Text>
-          </View>
-        </ImageBackground>
+        <Header navigation={navigation} year='WINTER 1980' title='LA MARCA' background={background} />
         <View style={styles.winesLine}>
           <View style={styles.winesBackground}></View>
           <View style={styles.wineWrapper}>

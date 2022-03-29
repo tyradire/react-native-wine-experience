@@ -3,21 +3,13 @@ import { StyleSheet, View, Text, ImageBackground, Image, TouchableOpacity } from
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import Header from "../Components/Header";
+import background from '../images/pear-bg.jpg';
 
 function Andre({ navigation }) {
 
   return(
       <View style={styles.header}>
-        <Header navigation={navigation} year='SPRING 1961' title='ANDRÉ' />
-        {/* <ImageBackground source={require('../images/pear-bg.jpg')} style={styles.background}>
-          <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.buttonOverlay}>
-            <FontAwesome5 name='bars' style={styles.button} />  
-          </TouchableOpacity>
-          <View style={styles.titleWrapper}>
-            <Text style={styles.titleYear}>SPRING 1961</Text>
-            <Text style={styles.title}>ANDRÉ</Text>
-          </View>
-        </ImageBackground> */}
+        <Header navigation={navigation} year='SPRING 1961' title='ANDRÉ' background={background} />
         <View style={styles.winesLine}>
           <View style={styles.winesBackground}></View>
           <View style={styles.wineWrapper}>

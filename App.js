@@ -14,11 +14,26 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Drawer.Navigator screenOptions={{headerShown: false}} initialRouteName='Andre'>
-        {/* <Drawer.Screen name='Main' component={Main} /> */}
+      <Drawer.Navigator initialRouteName='Andre' screenOptions={{
+        headerShown: false,
+        drawerStyle: {
+          backgroundColor: '#8A140D',
+          opacity: .8,
+        },
+        drawerLabelStyle: {
+          color: '#FFFFFF',
+          fontFamily: 'Roboto',
+          fontWeight: 'normal',
+          fontSize: 30,
+          height: 35,
+        },
+        drawerActiveBackgroundColor: 'transparent',
+      }}
+      >
+        <Drawer.Screen name="&#8592;" component={Main} />
         <Drawer.Screen name='Andre' component={Andre} />
         <Drawer.Screen name='Apothic' component={Apothic} />
-        <Drawer.Screen name='LaMarca' component={LaMarca} />
+        <Drawer.Screen name='La Marca' component={LaMarca} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

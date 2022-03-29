@@ -3,9 +3,9 @@ import { StyleSheet, View, Text, ImageBackground, Image } from 'react-native';
 import { TouchableOpacity } from "react-native";
 import { FontAwesome5 } from '@expo/vector-icons';
 
-function Header({ navigation, year, title }) {
+function Header({ navigation, year, title, background }) {
   return(
-    <ImageBackground source={require('../images/pear-bg.jpg')} style={styles.background}>
+    <ImageBackground source={background} style={styles.background}>
       <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.buttonOverlay}>
         <FontAwesome5 name='bars' style={styles.button} />  
       </TouchableOpacity>
