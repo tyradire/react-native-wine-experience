@@ -1,25 +1,25 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-import AppLoading from 'expo-app-loading'
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 
-import AndreScreen from './src/AndreScreen';
-import ApothicScreen from './src/ApothicScreen';
-import LaMarcaScreen from './src/LaMarcaScreen';
-import MainScreen from './src/MainScreen';
+
+import Andre from './Screens/Andre';
+import Apothic from './Screens/Apothic';
+import LaMarca from './Screens/LaMarca';
+import Main from './Screens/Main';
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
 
   return (
-    <View style={styles.main}>
-      <StatusBar translucent={true}/>
-      <MainScreen />
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator screenOptions={{headerShown: false}} initialRouteName='Andre'>
+        {/* <Drawer.Screen name='Main' component={Main} /> */}
+        <Drawer.Screen name='Andre' component={Andre} />
+        <Drawer.Screen name='Apothic' component={Apothic} />
+        <Drawer.Screen name='LaMarca' component={LaMarca} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  main: {
-    flex: 1,
-  }
-})

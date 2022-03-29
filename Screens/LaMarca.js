@@ -3,12 +3,12 @@ import { StyleSheet, View, Text, ImageBackground, Image } from 'react-native';
 import { TouchableOpacity } from "react-native";
 import { FontAwesome5 } from '@expo/vector-icons';
 
-function LaMarcaScreen() {
+function LaMarca({ navigation }) {
 
   return(
       <View style={styles.header}>
         <ImageBackground source={require('../images/grape-bg.jpg')} style={styles.background}>
-          <TouchableOpacity style={styles.buttonOverlay}>
+          <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.buttonOverlay}>
             <FontAwesome5 name='bars' style={styles.button} />  
           </TouchableOpacity>
           <View style={styles.titleWrapper}>
@@ -188,4 +188,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LaMarcaScreen;
+export default LaMarca;

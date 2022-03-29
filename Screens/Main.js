@@ -17,7 +17,7 @@ import {
 import { useFonts } from 'expo-font';
 import AppLoading from "expo-app-loading";
 
-function MainScreen() {
+function Main({ navigation }) {
 
   let [fontsLoaded] = useFonts({
     Roboto_100Thin,
@@ -40,7 +40,7 @@ function MainScreen() {
 
   return(
   <View style={styles.container}>
-    <Text style={styles.title}>A FAMIL1Y TRADITION</Text>
+    <Text style={styles.title}>A FAMILY TRADITION</Text>
     <Image 
     style={styles.wineglass} 
     source={require('../images/wineglass.png')}
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     lineHeight: 23,
     fontFamily: 'Roboto_300Light',
-    marginTop: 200,
+    marginTop: 180,
   },
   wineglass: {
     width: 367,
@@ -77,8 +77,8 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     fontFamily: 'Roboto_400Regular',
     marginHorizontal: 25,
-    marginTop: 140,
+    marginTop: 80,
   }
 });
 
-export default MainScreen;
+export default Main;
